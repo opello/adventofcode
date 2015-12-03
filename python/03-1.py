@@ -1,11 +1,11 @@
 #!/usr/bin/env python
 
-visited = []
+visited = set()
 x = 0
 y = 0
 
 # Count the first house.
-visited += [(x,y)]
+visited.add((x,y))
 
 with open('../inputs/03.txt') as f:
    while True:
@@ -21,6 +21,6 @@ with open('../inputs/03.txt') as f:
       if c == '<':
          y -= 1
 
-      visited += [(x,y)]
+      visited.add((x,y))
 
-print len(set(visited))
+print len(visited)
