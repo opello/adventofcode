@@ -10,12 +10,14 @@ with open('../inputs/04.txt') as f:
 
 prefix = prefix[0].rstrip()
 
-while True:
-   md5 = hashlib.md5()
-   md5.update('{0}{1}'.format(prefix, number))
+md5 = hashlib.md5()
+md5.update(prefix)
 
-   if md5.hexdigest()[:6] == '000000':
-      #print md5.hexdigest()
+while True:
+   m = md5.copy()
+   m.update(str(number))
+
+   if m.hexdigest()[:6] == '000000':
       print number
       break
 
