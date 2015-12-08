@@ -69,7 +69,7 @@ while 'a' not in state.keys():
          else:
             cont = True
             break
-      
+
       if cont:
          continue
 
